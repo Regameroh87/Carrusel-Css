@@ -1,34 +1,63 @@
 
 section {
-    background-color: black;
-    perspective: 1000px;
-    margin: 0;
-    overflow: hidden;
-    height: auto;
-    padding: 200px;
+  background-color: black;
+  perspective: 1000px;
+  margin: 0;
+  overflow: hidden;
+  height: auto;
+  padding: 200px;
+}
+
+.calesita {
+  display: flex;
+  width: 100px;
+  height: 400px;
+  position: relative;
+  margin: 100px auto;
+  transform-style: preserve-3d;
+  animation: girarCarrusel 20s linear infinite;
+}
+
+.calesita div {
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  top:50px;
+  border-radius: 20px;
+  -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, rgba(0,0,0,0.3));
+}
+
+  .calesita div img {
+  width: 100%;
+  height:100%;
+  border-radius: 20px;
+}
+
+.calesita:hover {
+  animation-play-state:paused;
+}
+
+.calesita div:nth-child(1) { 
+  transform: rotateY(72deg) translateZ(300px); 
+  }
+.calesita div:nth-child(2) { 
+  transform: rotateY(144deg) translateZ(300px); 
+  }
+.calesita div:nth-child(3) { 
+  transform: rotateY(216deg) translateZ(300px); 
+  }
+.calesita div:nth-child(4) { 
+  transform: rotateY(288deg) translateZ(300px); 
+  }
+.calesita div:nth-child(5) { 
+  transform: rotateY(360deg) translateZ(300px); 
   }
 
-  .calesita {
-    display: flex;
-    width: 100px;
-    height: 400px;
-    position: relative;
-    margin: 100px auto;
-    transform-style: preserve-3d;
-    animation: girarCarrusel 20s linear infinite;
+@keyframes girarCarrusel {
+  from {
+    transform: rotateY(0deg);
   }
-
-  .calesita div {
-    width: 200px;
-    height: 300px;
-    position: absolute;
-    top:50px;
-    border-radius: 20px;
-    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, rgba(0,0,0,0.3));
+  to {
+    transform: rotateY(360deg);
   }
-
-    .calesita div img {
-    width: 100%;
-    height:100%;
-    border-radius: 20px;
-  }
+}
